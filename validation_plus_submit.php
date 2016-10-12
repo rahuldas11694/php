@@ -1,17 +1,38 @@
+
+<!-- 
+<?php 
+  //$name = $_POST['name'];
+  //$email = $_POST['email'];
+  //$contact = $_POST['contact'];
+  //$gender = $_POST['gender'];
+  //$address = $_POST['address'];
+   //echo "$name<br>"; 
+   //echo "$email<br>";
+   //echo "$contact<br>";
+   //echo "$gender<br>";
+   //echo "$address<br>";
+
+
+?> -->
+
 <?php 
 
 $nameErr = $emailErr = $genderErr = $pwdErr = $phErr = "";
 
-$name =  $email = $gender = $address = $contact = $pwd= "";
+$name =  $email = $gender = $address = $contact = $pwd= "pp";
 /*****************************************************************/
 if ($_SERVER["REQUEST_METHOD"]== "POST")   
 {
+
   /************************************* NAME ***************************************/
 
-  if(empty($_POST["name"]))
+  if(empty($_POST["name"]) )
   {
     $nameErr="Name is Required";
-    echo "missing: $nameErr <br>";   // if missin then print
+    //echo "missing: $nameErr <br>";   // if missin then print
+    $arr = array('name' =>$nameErr);
+    echo json_encode($arr);
+    echo '<br>';
   }
   else
   {
@@ -20,19 +41,25 @@ if ($_SERVER["REQUEST_METHOD"]== "POST")
 
     if (!preg_match("/^[a-z\\s]{1,25}$/i",$name)) // if validation fails execute next line  nd print
     {
-      $nameErr = "Only letters and white space allowed <br>";
-      echo "$nameErr";
+      $nameErr = "Only letters and white space allowed";
+      //echo "$nameErr";
+
+     $arr = array('name' =>"$nameErr");
+    echo json_encode($arr);
+    echo '<br>';
+
     }
-    else
-    {
+    else     // this else for printing the right form field after right validation 
+    { return;
       $name = $_POST["name"]; // if validation is right then print this else
       echo "name is  $name  <br>";
        //header('Content-type: application/json');
-        echo json_encode( $name  );    // json format
-        echo "<br>";
+        //echo json_encode( $name  );    // json format
+        //echo "<br>";
 
 
-    }
+    // }
+}
 }
 /************************************** EMAIL ****************************************/
 
@@ -69,6 +96,7 @@ echo "missing: $genderErr <br> ";
 }
 else{
   $gender = $_POST["gender"];
+  
   echo "$gender<br>";
 }
 /******************************* PWD **********************************/
@@ -111,35 +139,17 @@ else{$phErr="right";
 $contact =$_POST["contact"];
 echo "$contact <br>";
 
-  }
+//   }
+// $arr = array('name' =>$_POST['$nameErr']);
+// echo json_encode($arr);
 
 }
+
+
+ }
+// $arr = array('name' =>$_POST['$nameErr']);
+// echo json_encode($arr);
+
 }
 /*****************************************************************/
-
-function test_input($data)        //   this is to trim all the spaces spcl characters 
-{
-$data = trim($trim);
-$data = stripslashes($data);
-$data = htmlspecialchars($data);
-return $data;
-}
-
-   $arr = array('name' =>$_POST['name'], 'Email' =>$_POST['name'], 'Gender' =>$_POST['gender'], 'contact ' => $_POST['contact'], 'Address' => $_POST['address']);
-   echo json_encode($arr);
-
-
-
-
-?> 
-
-
-
-<!-- your name is <?php echo $_POST["name"]; ?><br>
- Your email is <?php echo $_POST["email"]; ?>.<br>
- Your pwd is <?php echo $_POST["pwd"]; ?>.<br>
- Your phone number is <?php echo $_POST["contact"]; ?>.<br>
- Your address is <?php echo $_POST["address"]; ?>.<br>
- Your gender is <?php echo $_POST["gender"]; ?>.
- -->
-
+?>
