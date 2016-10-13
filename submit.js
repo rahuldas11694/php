@@ -20,30 +20,12 @@ $('#form_sub').submit(function(e)
             datatype: 'json',
 
             success: function(data) {
-                console.log(data)
-                var name = $("#name").val();
-                var email = $("#email").val();
-                var address = $("#address").val();
-                var contact = $("#contact").val();
-                var pwd = $("#pwd").val();
-                var male = $("#gmale").val();
-                var female = $("#gfemale").val();
-
-
-
-
-                // if (name == '' || email == '' || contact == '' || address == '' || pwd=='' ||(male==false || female==false)) {
-                //     //$('.nerror').html("enter name");
-                //     alert("please fill all fields");
-                // } else {
-                //     $('#success').html('successful submission');
-                //     $('#data').html(data);
-                // }
-
-
                 $('#data').html(data);
-                console.log("data sent: success full", "***value is", e, 'data', data);
+                console.log("data sent: success full", "***value is",'data',data);
+                console.log("callinfg php fun")
+                
 
+                
                 //$('#success').html(" successful submission ");
                 //$('#success').load('http://www.rahullocal.com/validation_plus_submit.php');
 

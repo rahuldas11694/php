@@ -3,21 +3,22 @@
 
 $nameErr = $emailErr = $genderErr = $pwdErr = $phErr = "";
 
-$name =  $email = $gender = $address = $contact = $pwd= "pp";
+$name =  $email = $gender = $address = $contact = $pwd= "";
 /*****************************************************************/
+$errorArray = array();
 if ($_SERVER["REQUEST_METHOD"]== "POST")   
 {
 
   /************************************* NAME ***************************************/
-  $errorArray = array();
+  //$errorArray = array();
   if(empty($_POST["name"]) )
   {
     $nameErr="Name is Required";
     //echo "missing: $nameErr <br>";   // if missin then print
     $arr = array('name' =>$nameErr);
     $errorArray[] = $arr;
-    echo json_encode($arr);
-    echo '<br>';
+    //echo json_encode($arr);
+    //echo '<br>';
   }
   else
   {
@@ -30,8 +31,8 @@ if ($_SERVER["REQUEST_METHOD"]== "POST")
       //echo "$nameErr";
      $arr = array('name' =>"$nameErr");
          $errorArray[] = $arr;
-    echo json_encode($arr);
-    echo '<br>';
+    //echo json_encode($arr);
+    // echo '<br>';
 
 
     }
@@ -54,8 +55,8 @@ if ($_SERVER["REQUEST_METHOD"]== "POST")
     $emailErr="email is Required";
     $arr = array('email' => $emailErr );
     $errorArray[] = $arr;
-    echo json_encode($arr);
-    echo " <br>";
+    //echo json_encode($arr);
+    // echo " <br>";
     }
   else
     {
@@ -67,8 +68,8 @@ if ($_SERVER["REQUEST_METHOD"]== "POST")
         $emailErr="Invalid email ";
             $arr = array('email' => $emailErr );
             $errorArray[] = $arr;
-            echo json_encode($arr);
-        echo " <br>";
+           // echo json_encode($arr);
+        // echo " <br>";
       }
       else
       { 
@@ -85,14 +86,14 @@ if(empty($_POST["gender"]))
 $genderErr = "Gender is required";
             $arr = array('gender' => $genderErr );
             $errorArray[] = $arr;
-echo json_encode($arr);
-//echo "<br> ";
+//echo json_encode($arr);
+// echo "<br> ";
 
 }
 else{
   $gender = $_POST["gender"];
   
-  echo "$<br>";
+  echo "";
 }
 /******************************* PWD **********************************/
 if(empty($_POST["pwd"]))
@@ -100,7 +101,7 @@ if(empty($_POST["pwd"]))
     $pwdErr="password is Required";
     $arr = array('pwd'=>$pwdErr);
     $errorArray[] = $arr;
-    echo " <br>";
+    // echo " <br>";
  }
   else{
       
@@ -113,8 +114,8 @@ if(empty($_POST["pwd"]))
 $address= "missing address";
 $arr = array('address'=>$address);
 $errorArray[] = $arr;
-echo json_encode($arr);
-echo " <br>";
+//echo json_encode($arr);
+// echo " <br>";
 }
 else
 {
@@ -125,10 +126,10 @@ $address = $_POST["address"];
   if(empty($_POST["contact"]))
   {
 $phErr= "Phone number required";
-$arr = array("phone num"=> $phErr);
+$arr = array("contact"=>$phErr);
 $errorArray[] =$arr;
-echo json_encode($arr); 
-echo "<br>";
+//echo json_encode($arr); 
+// echo "<br>";
 }
 else
 {
@@ -136,10 +137,10 @@ $contact = $_POST["contact"];
 if(!preg_match("/^[0-9]{10}$/", $contact))       //if not missin, validate 
 {
     $phErr="please enter valid phone numbar";
-    $arr = array("phone num"=>$phErr);
-    $errorArray = $arr;
-    echo json_encode($arr);
-    echo "<br>";
+    $arr = array("contact"=>$phErr);
+    $errorArray[] = $arr;
+    //echo json_encode($arr);
+    // echo "<br>";
 }
 else{$phErr="right";
 $contact =$_POST["contact"];
@@ -154,9 +155,13 @@ $contact =$_POST["contact"];
  }
 // $arr = array('name' =>$_POST['$nameErr']);
 // echo json_encode($arr);
-$json = $errorArray;
-echo json_encode($json);
 
 }
+
+$json = $errorArray;
+echo json_encode($json);
+echo  run();
+
+
 /*****************************************************************/
 ?>
