@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST")
 
       }
     }
-/************************** GENDER ***************************************/
+/************************** GENDER **************************************/
 
 
 if(empty($_POST["gender"]))
@@ -157,10 +157,16 @@ $contact =$_POST["contact"];
 // echo json_encode($arr);
 
 }
-
+if ($errorArray==null)
+{
+  echo "SUCCESSFUL SUBMISSION";
+  return;
+}
+else{
 $json = $errorArray;
 echo json_encode($json);
-echo  run();
+}
+// echo  run();
 
 
 /*****************************************************************/
