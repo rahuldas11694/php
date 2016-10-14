@@ -18,7 +18,7 @@
 
      <h2>FORM Validation</h2>
     <p><span class="error">*required field</span></p>
-        <form  action="Validation_plus_submit.php" method="post" id="form_sub">
+        <form  action="" method="post" id="form_sub">
         Name:
         <input type="text" name="name" id="name"/>
         <span class="error">* </span>
@@ -50,6 +50,11 @@
     </form>
 
     <div id="success"></div>
+    <div id="success1"></div>
+    <div id="success"></div>
+    <div id="success"></div>
+    <div id="success"></div>
+
     <div id="data"></div>
     <div id="dataArray"></div>
 
