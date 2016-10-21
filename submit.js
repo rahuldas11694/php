@@ -16,7 +16,7 @@ $('#form_sub').submit(function(e)
 
                //console.log("length og data",data.message.length);
                                       $("#success").html("");
-              if((data.message.length)!=null)
+              if((data.message.length)!==null)
               {
                 len=  data.message.length; //  JSON.parse(data); 
                 console.log(len)

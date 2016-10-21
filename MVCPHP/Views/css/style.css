@@ -1,0 +1,198 @@
+
+.ed
+{
+	font-size: 2em;
+    color: black;
+}
+
+.emp-data
+{
+    background-color: darkturquoise;	
+    text-align: center;
+    margin-left: 21%;
+    margin-right: 23%;
+    padding-bottom: 28px;
+    position: relative;
+    top:39px;
+}
+
+
+.reg-label
+{
+	font-family: sans-serif;
+	text-align: left;
+    clear: both;
+    float:left;
+    margin-left:21px;
+    margin-top: 10px;
+    display:inline-block;
+    width:30%;
+
+}
+
+
+.submit
+{
+	color: black;
+    background-color: aqua;
+    position: relative;
+    top: 12px;
+    width: 81px;
+    height: 33px;
+    font-size: 1em;
+    width: 74px;
+    font-size: 1em;
+    border-radius: 6px;
+    margin-top: 24px;
+    border-color: black;
+}
+.wid
+{
+	width: 161px;
+    margin: 11px;
+    position: relative;
+    left: 35px; 
+}
+
+.reg-body{
+	background-color: black;
+}
+
+
+#log-body
+{
+    background-color: black; 
+}
+
+.log-label
+{
+
+    display: inline-block;
+    width: 10%;
+    color: white;
+    margin-left: -35px;
+    padding: 5px;
+
+}
+.log-submit
+{
+    color: black;
+    width: 74px;
+    font-size: 1em;
+    border-radius: 6px;
+    margin-top: 24px;
+    background-color: aqua;
+
+}
+.pad
+{
+    padding-right: 46px;
+}
+
+p
+{
+    color: white;
+    position: relative;
+    left: 33%;
+    display: none;
+}
+
+.header
+{
+    background-color:darkturquoise;
+    padding:18px;
+
+}
+.yap
+{
+  background-color: red;
+    color: white;
+    border: solid 1px black;
+    font-size:23px;
+}
+
+.hdr-ul
+{
+    list-style-type: none;
+
+    float:right;
+
+    font-size: 22px;
+    overflow: hidden;
+    border: none;
+    position: relative;
+    bottom:44px;
+
+}
+
+li{
+    float:left;
+}
+
+li a
+{
+    position:relative;
+    top:5px;
+    display: block;
+    color:black;
+    padding:10px;
+    
+}
+
+.header-class
+{
+    background-color: black;
+}
+
+.dash
+{
+    color : yellow;
+}
+
+
+.social-media{
+  position:fixed;
+bottom:0;
+width:100%;
+ background-color: darkturquoise;
+ /*border-radius:29px;*/
+ padding-bottom: 12px;
+
+}
+
+.social-icons
+{
+    position: relative;
+    left: 28px;
+    list-style-type: none;
+
+
+}
+.social-img
+{
+   max-width: 26px;
+   padding-left: 11px;
+   position:relative;
+   top:7px ;
+   left:-47px;
+
+
+}
+.copy-right
+{
+  color: black;
+    float: right;
+    position: relative;
+    top: 8px;
+    right: 22px;
+}
+.model-div
+{
+color: aqua;
+    position: relative;
+    left: 20%;
+    margin-bottom: 10px;
+}
+
+
+
