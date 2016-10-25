@@ -1,44 +1,43 @@
 <?php
 
-class Model
-{
-function showTable()
-{
+class Model{
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname="INFO";
-// Create connection
-//$conn = new mysqli($servername, $username, $password);
+	function showTable(){
 
-$link = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if ($link===false) {
-    die("Connection failed: " .mysqli_connect_error());
-}
-echo "Connected <br>";
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname="INFO";
+		// Create connection
+		//$conn = new mysqli($servername, $username, $password);
 
-  $sql = "SELECT name, email, address , contact FROM fields";
+		$link = mysqli_connect($servername, $username, $password, $dbname);
+		// Check connection
+		if ($link===false){
+			die("Connection failed: " .mysqli_connect_error());
+		}
+			echo "Connected <br>";
 
-  $result = $link->query($sql);
+			$sql = "SELECT name, email, address , contact FROM fields";
 
-if($result->num_rows>0)
-{
-while($row= $result->fetch_assoc())
-{ 
-echo "<div class='model-div' >name:".$row["name"]."&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"."email:".$row["email"]."&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".
-	"address:".$row["address"]."&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"."contact:".$row["contact"]."<br> </div>";
+			$result = $link->query($sql);
 
-}
-}
-else
-{
-	echo "zero results";
-}
-$link->close();
-}
+		if($result->num_rows>0){
+			while($row= $result->fetch_assoc())
+				{ 
+				echo "<div class='model-div' >name:".$row["name"]."&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"."email:".$row["email"]."&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".
+				 "address:".$row["address"]."&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"."contact:".$row["contact"]."<br> </div>";
+
+			}
+		}
+		else{
+			echo "zero results";
+		}
+	
+		$link->close();
+	}
 
 }
+
 $model = new Model();
 ?>

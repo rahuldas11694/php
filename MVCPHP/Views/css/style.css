@@ -91,10 +91,12 @@
 
 p
 {
-    color: white;
-    position: relative;
-    left: 33%;
-    display: none;
+    color: red;
+    position: absolute;
+
+    bottom: 85%;
+    left: 35%;
+    display: block;
 }
 
 .header
