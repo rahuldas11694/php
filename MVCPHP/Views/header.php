@@ -1,6 +1,6 @@
-<!-- this is view include header and footer here and call it in main  -->
+
 <?php 
-function head(){
+function head1(){
 
 	echo '<!DOCTYPE html>
 			<html>
@@ -24,7 +24,7 @@ function head(){
 				<span class="yap">Yapsody Ent.</span>
 
 				<span><ul class="hdr-ul">
-				<li><a href="#logout">Register</a></li>
+				<li><a href="index.php?page=registration">Register</a></li>
 				<li><a href="#help"> Help</a></li>
 
 				</ul>
@@ -33,38 +33,73 @@ function head(){
 
 ';
 }
-?>
-<?php
-// function head_for_login(){
 
-// 	echo '<!DOCTYPE html>
-// 			<html>
-// 			<head>
-// 				<link rel="stylesheet" href="Views/css/style.css">
-// 				<title> Header </title>
-// 				<!--<style type="text/css">
-// 				label
-// 				{
+function head2(){
 
-// 				}
-// 				.d
-// 				{
-// 				margin-top:100px;
-// 				}
-// 				</style>-->
-// 				</head>
+	echo '<!DOCTYPE html>
+			<html>
+			<head>
+				<link rel="stylesheet" href="Views/css/style.css">
+				<title> Header </title>
+				<!--<style type="text/css">
+				label
+				{
 
-// 				<body class="header-class">
-// 				<div class="header">
-// 				<span class="yap">Yapsody Ent.</span>
+				}
+				.d
+				{
+				margin-top:100px;
+				}
+				</style>-->
+				</head>
 
-// 				<span><ul class="hdr-ul">
-// 				<li><a href="#logout">Logout</a></li>
-// 				<li><a href="#help"> Help</a></li>
+				<body class="header-class">
+				<div class="header">
+				<span class="yap">Yapsody Ent.</span>
 
-// 				</ul>
-// 				</span>
-// 				</div>
+				<span><ul class="hdr-ul">
+				<li><a href="index.php?page=logout">logout</a></li>
+				<li><a href="#help"> Help</a></li>
 
-// ';
+				</ul>
+				</span>
+				</div>
+
+';
+}
+function head3(){
+
+	echo '<!DOCTYPE html>
+			<html>
+			<head>
+				<link rel="stylesheet" href="Views/css/style.css">
+				<title> Header </title>
+				<!--<style type="text/css">
+				label
+				{
+
+				}
+				.d
+				{
+				margin-top:100px;
+				}
+				</style>-->
+				</head>
+
+				<body class="header-class">
+				<div class="header">
+				<span class="yap">Yapsody Ent.</span>
+
+				<span><ul class="hdr-ul">
+				<li><a href="index.php?page=login">login</a></li>
+				<li><a href="#help"> Help</a></li>
+
+				</ul>
+				</span>
+				</div>
+
+';
+}
+
+
 ?>

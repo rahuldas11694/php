@@ -8,9 +8,9 @@ class Controller{
 
 	    //session_start();
 
-		require_once("Views/header.php");
+		// require("Views/header.php");
 
-		head();
+		// head();
 
  
     //require("Views/dashboard.php");
@@ -19,6 +19,10 @@ class Controller{
     $page =$_GET['page'];
 
 		if($page==='login'){
+
+			require("Views/header.php");
+
+			head1();
 
 			require_once("Views/login.php");
 			//head();
@@ -48,6 +52,8 @@ class Controller{
 		}
 
 	if($page==='registration'){
+         require('Views/header.php');
+         head3();
 
 		require("Views/registration.php");
 
@@ -83,6 +89,8 @@ class Controller{
 
 		   	if($page==='dashboard')
 		   	   {
+		   	   	require('Views/header.php');
+		   	   	head2();
 		   	 		if(!$_SESSION['username'])
 		   	 			{
 		   	 			echo '<meta http-equiv="refresh" content="0; URL=http://www.rahullocal.com/MVCPHP/index.php?page=login">';	
@@ -101,11 +109,13 @@ class Controller{
         
         if($page==='logout')
         {
-
+          // require('Views/header.php');
+          // head2();
 		    //echo "<p style='color:red; position:relative; top:50%'>session_destroying</p>";
 			
 			session_destroy();
-		    
+		    require('Views/header.php');
+          head2();
 		    //echo "<p style='color:red; position:relative; top:50%'>session_destroyed now</p>";
 
 		    echo "<p style='color:red; position:relative; top:70%'>You are being redirected to login page, wait 5seconds.</p>";

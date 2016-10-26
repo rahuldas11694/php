@@ -5,7 +5,7 @@ function dash($val,$name){
 	}
 	else{
 
- 		echo '<a href="index.php?page=logout"><input type="button" name="logout"  		   	 value="Logout"></a>';
+ 		//echo '<a href="index.php?page=logout"><input type="button" name="logout"  		   	 value="Logout"></a>';
 
         echo '<p style="color:red; position:relative; top:50% ">'.$name.'</p>';
 
