@@ -3,7 +3,7 @@
 class Controller{
 
 	public function __construct(){
-   session_start();
+    session_start();
 	    // $val1= $_GET['value1'];
 
 	    //session_start();
@@ -31,13 +31,25 @@ class Controller{
 				echo 'require login page <br>';
 
 				$checklogin = new Checklogin();
-				$checklogin->checklogin();
+				$check_user=$checklogin->checklogin();
+				echo "returned value".$check_user;
+
+				if($check_user=='1'){
+				echo '<meta http-equiv="refresh" content="0; URL=http://www.rahullocal.com/MVCPHP/index.php?page=dashboard">';
+
+				}
+
+				else{
+					echo "<script>
+					alert('Not a Valid User');
+					</script>";
+				}		
 			}
 		}
-    
+
 	if($page==='registration'){
 
-		require_once("Views/registration.php");
+		require("Views/registration.php");
 
 		$reg = new Registration();
 
@@ -55,7 +67,6 @@ class Controller{
 
 				$result = $signup->registration($_POST); //this is func in signup model
 				$reg = new Registration();            // this is view
-
 				if($result)
 					{
 						$reg->showHidden();
@@ -65,17 +76,49 @@ class Controller{
 					{
 						$reg->missingField(); 
 					}
-
 			}
 	}
+
 		   //}
 
-		  //  if($page===dashboard)
-		  //  {
-		  //  	//require("Views/dashboard.php");
-		  //  	//dash($val);
+		   	if($page==='dashboard')
+		   	   {
+		   	 		if(!$_SESSION['username'])
+		   	 			{
+		   	 			echo '<meta http-equiv="refresh" content="0; URL=http://www.rahullocal.com/MVCPHP/index.php?page=login">';	
+	   						
+		   	 			}
+	   				else{
+		   					//require("Views/dashboard.php");
+		   					//dash($val);
+	   					   $ssnUsrName=$_SESSION['username'];
+		   					//echo '<p style="color:red">'.$_SESSION['username'].'</p>';
+		   					include('Views/dashboard.php');
+		   					dash($val,$ssnUsrName);
+			   	 			return;
+	   				}
+		   		}
+        
+        if($page==='logout')
+        {
 
-		  //  //}
+		    //echo "<p style='color:red; position:relative; top:50%'>session_destroying</p>";
+			
+			session_destroy();
+		    
+		    //echo "<p style='color:red; position:relative; top:50%'>session_destroyed now</p>";
+
+		    echo "<p style='color:red; position:relative; top:70%'>You are being redirected to login page, wait 5seconds.</p>";
+ 			
+		   echo '<meta http-equiv="refresh" content="5;url=http://www.rahullocal.com//MVCPHP/index.php?page=login" />';
+
+ 			//echo '<meta http-equiv="refresh" content="5000; URL=http://www.rahullocal.com/MVCPHP/index.php?page=login">';
+
+
+        	
+        }
+
+
 
 		  //  include("Main/model.php");
 		 

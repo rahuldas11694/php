@@ -1,11 +1,12 @@
+
 1 : User should be redirected to dashboard if sucessfull Login
 
 2 : User should be given an error popup if failed login.
 
-3: If user directly accesses Dashboard page, he should be redirected to Login (if user is not logged in).If the user is logged in thn he should be in dashboard. snd display text "Hello <username>" in dashboard
+3 : If user directly accesses Dashboard page, he should be redirected to Login (if user is 	   not logged in).If the user is logged in then he should be in dashboard. snd display 	    text "Hello <username>" in dashboard...
 
-4: Impleent Logout
+4 : Impleent Logout
 
-5: Dashboard page should consist of just logout link in menu.
+5 : Dashboard page should consist of just logout link in menu.
 
-6 : Login and register should not contain the logout button. 
+6 : Login and register should not contain the logout button.

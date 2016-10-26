@@ -3,9 +3,9 @@
 class  Checklogin{
 
 	function checklogin(){
-
+        session_start();
 		if($_SERVER["REQUEST_METHOD"]=="POST"){
-	//session_start();// start session at the beginning of the code not here before html ok
+	    //session_start();// start session at the beginning of the code not here before html ok
 
 			// $username = $_POST["username"];
 
@@ -40,26 +40,33 @@ class  Checklogin{
 				$run_user = mysqli_query($conn,$sel_user);
 
 				$check_user = mysqli_num_rows($run_user);
+				//echo $check_user;
 
 				if($check_user>0)
 				{
-					$_SESSION['username']= $username;
+					$_SESSION['username'] = $username;
+				    echo "valid user <br>".$_SESSION['username'];
+				    return $check_user;
+				}
 				    
-				    echo "valid user";
-
-				    
-				}				
-        		
         		else{
-        			echo "invalid user";
+        			echo "invalid user<br>";
+        			echo $check_user;
+        			return $check_user;
         		}
-
+				    
 			}
 
 		}
-
+        			
 	}
+
+
+
 	
 
 
 ?>
+
+
+        		
