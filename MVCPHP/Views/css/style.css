@@ -1,8 +1,7 @@
-
 .ed
 {
 	font-size: 2em;
-    color: black;
+    color: yellow;
 }
 
 .emp-data
@@ -33,7 +32,7 @@
 
 .submit
 {
-	color: black;
+	color: yellow;
     background-color: aqua;
     position: relative;
     top: 12px;
@@ -44,7 +43,7 @@
     font-size: 1em;
     border-radius: 6px;
     margin-top: 24px;
-    border-color: black;
+    border-color: yellow;
 }
 .wid
 {
@@ -55,13 +54,13 @@
 }
 
 .reg-body{
-	background-color: black;
+	background-color:yellow;
 }
 
-
 #log-body
+
 {
-    background-color: black; 
+    background-color: yellow; 
 }
 
 .log-label
@@ -76,7 +75,7 @@
 }
 .log-submit
 {
-    color: black;
+    color: yellow;
     width: 74px;
     font-size: 1em;
     border-radius: 6px;
@@ -109,7 +108,7 @@ p
 {
   background-color: red;
     color: white;
-    border: solid 1px black;
+    border: solid 1px yellow;
     font-size:23px;
 }
 
@@ -136,14 +135,14 @@ li a
     position:relative;
     top:5px;
     display: block;
-    color:black;
+    color:yellow;
     padding:10px;
     
 }
 
 .header-class
 {
-    background-color: black;
+    background-color: yellow;
 }
 
 .dash
@@ -182,7 +181,7 @@ width:100%;
 }
 .copy-right
 {
-  color: black;
+  color: yellow;
     float: right;
     position: relative;
     top: 8px;
@@ -194,6 +193,12 @@ color: aqua;
     position: relative;
     left: 20%;
     margin-bottom: 10px;
+}
+
+table, th, td {
+
+    border: 1px solid black;
+    border-collapse: collapse;
 }
 
 

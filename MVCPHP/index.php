@@ -90,7 +90,10 @@ class Controller{
 		   	if($page==='dashboard')
 		   	   {
 		   	   	require('Views/header.php');
+		   	   	require('Main/dbdata.php');
 		   	   	head2();
+		   	   	dbData();
+
 		   	 		if(!$_SESSION['username'])
 		   	 			{
 		   	 			echo '<meta http-equiv="refresh" content="0; URL=http://www.rahullocal.com/MVCPHP/index.php?page=login">';	
@@ -144,11 +147,4 @@ class Controller{
 }
 
     $cnt =new Controller();
-    
-
-
 ?>
- 
-
-
-
