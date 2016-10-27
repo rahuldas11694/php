@@ -9,6 +9,12 @@ function dash($val,$name){
 
         echo '<p style="color:red; position:relative; top:50% ">'.$name.'</p>';
 
+        echo '<form action="Main/upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload" value="<?php'. $name.'?>">
+    <input type="submit" value="Upload Image" id="uploadImg" name="submit">
+    </form>';
+
  	}
 }
 ?>

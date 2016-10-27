@@ -32,7 +32,7 @@ class Controller{
 
 			if(isset($_POST['submit'])){
 				require_once('Main/checklogin.php');
-				echo 'require login page <br>';
+				//echo 'require login page <br>';
 
 				$checklogin = new Checklogin();
 				$check_user=$checklogin->checklogin();
@@ -66,8 +66,8 @@ class Controller{
 				//    $ln = new Login();
 				// $ln->loginPage();
 
-				require_once("Main/registration.php");
-				echo "thank you <br>";
+				require_once("Main/registration.php"); 
+				//echo "thank you <br>";
 
 				$signup = new Signup();
 
@@ -89,10 +89,13 @@ class Controller{
 
 		   	if($page==='dashboard')
 		   	   {
+		   	   	$_SESSION['username'];
 		   	   	require('Views/header.php');
 		   	   	require('Main/dbdata.php');
+		   	   	
+
 		   	   	head2();
-		   	   	dbData();
+		   	   	dbData();  //calling fun to display all the data form db
 
 		   	 		if(!$_SESSION['username'])
 		   	 			{
@@ -108,7 +111,20 @@ class Controller{
 		   					dash($val,$ssnUsrName);
 			   	 			return;
 	   				}
+	   				// echo " before";
+
+        //             require('Main/upload.php');
+
+	   				// if(isset($_POST['submit'])){
+	   				
+	   				// echo " after";
+	   				//   imageName($_POST);
+
+	   				//}
+
 		   		}
+
+
         
         if($page==='logout')
         {

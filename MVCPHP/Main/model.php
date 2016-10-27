@@ -16,7 +16,7 @@ class Model{
 		if ($link===false){
 			die("Connection failed: " .mysqli_connect_error());
 		}
-			echo "Connected <br>";
+			//echo "Connected <br>";
 
 			$sql = "SELECT name, email, address , contact FROM fields";
 
@@ -31,7 +31,7 @@ class Model{
 			}
 		}
 		else{
-			echo "zero results";
+			//echo "zero results";
 		}
 	
 		$link->close();

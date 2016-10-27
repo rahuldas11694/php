@@ -30,7 +30,7 @@
 		$DOJ = $data['DOJ'];
 		$DOB = $data['DOB'];
 		$password = $data['password'];
-		$empId    = $data['empId'];
+		//$imageName    = $data['imageName'];
 
 		if($username!=='' && $email!=='' && $password!==''){
 			$sql= "insert into auth_user(username,email,address,teli,department,DOJ,DOB,password,empId) values ('$username','$email','$address','$teli','$department','$DOJ','$DOB','$password','$empId')";

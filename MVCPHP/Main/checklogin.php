@@ -5,6 +5,7 @@ class  Checklogin{
 	function checklogin(){
         session_start();
 		if($_SERVER["REQUEST_METHOD"]=="POST"){
+			
 	    //session_start();// start session at the beginning of the code not here before html ok
 
 			// $username = $_POST["username"];
@@ -29,7 +30,7 @@ class  Checklogin{
 						die("connection_aborted:" .mysqli_connect_error());
 				}
 					else{
-						echo "connected <br>";
+						//echo "connected <br>";
 					}
 
                 $username=mysqli_real_escape_string($conn,$_POST['username']);
@@ -45,13 +46,13 @@ class  Checklogin{
 				if($check_user>0)
 				{
 					$_SESSION['username'] = $username;
-				    echo "valid user <br>".$_SESSION['username'];
+				    echo "".$_SESSION['username'];
 				    return $check_user;
 				}
 				    
         		else{
-        			echo "invalid user<br>";
-        			echo $check_user;
+        			//echo "invalid user<br>";
+        			//echo $check_user;
         			return $check_user;
         		}
 				    

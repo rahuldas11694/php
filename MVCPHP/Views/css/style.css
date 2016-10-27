@@ -201,5 +201,20 @@ table, th, td {
     border-collapse: collapse;
 }
 
+#fileToUpload
+{color: yellow;
+    background-color: black;
+        width: 22%;
+    position: relative;
+    left: 3%;
 
+    
+}
 
+#uploadImg
+{
+    color: yellow;
+    background-color: black;
+    position:relative;
+    left:32%;
+}
