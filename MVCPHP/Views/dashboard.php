@@ -11,7 +11,8 @@ function dash($val,$name){
 
         echo '<form action="Main/upload.php" method="post" enctype="multipart/form-data">
     Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload" value="<?php'. $name.'?>">
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="hidden" value="'. $name .'" name="session_name" /> 
     <input type="submit" value="Upload Image" id="uploadImg" name="submit">
     </form>';
 

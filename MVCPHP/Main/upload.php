@@ -1,5 +1,5 @@
 <?php 
-include('MVCPHP/index.php');
+
 $target_dir = "../Views/uploads/";
 
 $target_file = $target_dir . time() . basename($_FILES["fileToUpload"]["name"]);
@@ -12,6 +12,7 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 if(isset($_POST['submit']))
     {
+        echo $_POST;
         $check = getimagesize($_FILES['fileToUpload']['tmp_name']);
         if($check !== false)
         {
@@ -54,7 +55,7 @@ if($imageFileType != 'jpg' && $imageFileType !='png' && $imageFileType !='jpeg' 
             echo '<br>The file' . basename($_FILES['fileToUpload']['name']). "has been uploaded";
 /*************************************************************/
         $servername = "localhost";
-        $server_username = "root";
+        $username = "root";
         $password = "";
         $dbname = "securityDB";
         $tbl_name="auth_user"; 
@@ -63,18 +64,39 @@ if($imageFileType != 'jpg' && $imageFileType !='png' && $imageFileType !='jpeg' 
         //$conn = new mysqli($servername, $username, $password);
         // Check connection
 
-        $conn= mysqli_connect($servername, $server_username, $password,$dbname);
+        $conn = mysqli_connect($servername, $username, $password,$dbname);
 
-        if ($link===false){
+        if ($conn ===false){
             die("Connection failed: " . mysqli_connect_error());
         }
         else{
             echo '<br>connected<br>';
         }
- echo $target_file."target_file";
-echo $name;
+ echo time() . basename($_FILES["fileToUpload"]["name"])."target_file";
+ $imageName=time() . basename($_FILES["fileToUpload"]["name"]);
+ echo "=========";
+print_r( $_POST);
+ echo "=========";
+echo "<br>qwertyu".$_POST['session_name'];
+$name=$_POST['session_name'];
 
-        $sql= "update auth_user set imageName = ".$target_file." where username =".$_SESSION['username'];
+            // $sql= "insert into auth_user(imageName) values ('$imageName')";
+            $sql="UPDATE auth_user SET imageName='$imageName' WHERE username='$name'"; // $imageName And $name should be in single Quote otherwise it will throw an sql error; 
+
+                //mysql_query($conn,$sql);
+                if(mysqli_query($conn,$sql)){
+                    return true;
+                    //echo "<p id ='signup' style='color:red'>new registration record inserted into db<p>";
+                }
+        else{
+            echo "sql Error:".$sql ."<br>connection " . mysqli_error($conn);
+        }
+
+
+
+
+
+
 
 
 /*************************************************************/
