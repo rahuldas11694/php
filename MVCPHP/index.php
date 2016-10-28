@@ -90,6 +90,7 @@ class Controller{
 		   	if($page==='dashboard')
 		   	   {
 		   	   	$_SESSION['username'];
+
 		   	   	require('Views/header.php');
 		   	   	require('Main/dbdata.php');
 		   	   	
@@ -108,21 +109,23 @@ class Controller{
 	   					   $ssnUsrName=$_SESSION['username'];
 		   					//echo '<p style="color:red">'.$_SESSION['username'].'</p>';
 		   					include('Views/dashboard.php');
-		   					dash($val,$ssnUsrName);
+		   					dash($val,$ssnUsrName, $_SESSION['ipic']);
 			   	 			return;
 	   				}
-	   				// echo " before";
 
-        //             require('Main/upload.php');
-
-	   				// if(isset($_POST['submit'])){
-	   				
-	   				// echo " after";
-	   				//   imageName($_POST);
-
-	   				//}
 
 		   		}
+
+	   		if($page==='upload'){
+	   			require('Main/upload.php');
+	   			$_SESSION['ipic'];
+	   			return;
+
+	   		}
+
+
+
+          
 
 
         
@@ -146,6 +149,8 @@ class Controller{
 
         	
         }
+
+
 
 
 

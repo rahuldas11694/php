@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT username, email, address,teli, department,DOB , DOJ FROM auth_user";
+$sql = "SELECT username, email, address,teli, department,DOB , DOJ, imageName FROM auth_user";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -22,11 +22,12 @@ if ($result->num_rows > 0) {
          echo "<tr><th>username</th>";
          echo "<th>Email</th>";
          echo "<th>Teliphone</th>";
-         echo "<th>Address</th></tr>";
+         echo "<th>Address</th>";
+         echo "<th>ImageName</th></tr>";
 
     while($row = $result->fetch_assoc()) {
 
-         echo "<tr><td>". $row["username"]."</td><td>" .$row["email"]. "</td><td>" . $row["teli"]. "</td><td>" . $row["address"]. "</td></tr>";
+         echo "<tr><td>". $row["username"]."</td><td>" .$row["email"]. "</td><td>" . $row["teli"]. "</td><td>" . $row["address"]. "</td><td>".$row["imageName"]."</td></tr>";
 
     }
     echo "</table>";
