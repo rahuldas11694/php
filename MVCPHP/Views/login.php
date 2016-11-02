@@ -9,7 +9,19 @@ class Login{
 		// 	echo '<p> Some fields are missing <p>';
 		// }
 	function loginPage(){
+      if(isset($_COOKIE['rahullocalhost']))
+      {
+    	echo 'cookie value:'. $_COOKIE['rahullocalhost'];
+      }
+      else
+      {
+ 		echo "cookie not set ";
+      }
+
+
+
 		echo'<div id="log-body"> 
+
 		<div align = "center">
 			<div style="width:300px;background-color:darkturquoise;; color:black;padding:3px; margin-top:100px"><b>LOGIN</b>
 			</div>
@@ -31,6 +43,9 @@ class Login{
 
 		</div>
 	</div>';
+	
+
+
 
 	}
 }

@@ -1,6 +1,9 @@
 
+
+
 <?php 
 function head1(){
+
 
 	echo '<!DOCTYPE html>
 			<html>

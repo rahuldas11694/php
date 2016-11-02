@@ -4,6 +4,12 @@ class Controller{
 
 	public function __construct(){
     session_start();
+
+	$strAddress = $_SERVER['REMOTE_ADDR'];    // this is IP address
+	$strBrowser = $_SERVER['HTTP_USER_AGENT'];
+	$strOperatingSystem = $_ENV['OS'];
+	$strInfo = "$strAddress::$strBrowser::$strOperatingSystem";
+	setcookie ("rahullocalhost",$strInfo, time()+1*60*60);
 	    // $val1= $_GET['value1'];
 
 	    //session_start();
